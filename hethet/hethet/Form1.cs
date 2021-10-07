@@ -12,9 +12,17 @@ namespace hethet
 {
     public partial class Form1 : Form
     {
+        RealEstateEntities context = new RealEstateEntities();
+        List<Flat> Flats;
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void LoadData()
+        {
+            Flats = context.Flats.ToList();
         }
     }
 }
