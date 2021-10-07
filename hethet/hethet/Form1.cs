@@ -117,6 +117,17 @@ namespace hethet
              GetCell(2, 1),
              GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
 
+            string[] kepletek = new string[values.GetLength(0)];
+
+            for (int i = 0; i < values.GetLength(0); i++)
+            {
+                kepletek[i] = string.Format("=G{0}*H{0}", i + 2);
+            }
+
+            xlSheet.get_Range(
+            GetCell(2, 9),
+            GetCell(1 + values.GetLength(0), 9)).Value2 = kepletek[0];
+
         }
 
         Excel.Application xlApp;
